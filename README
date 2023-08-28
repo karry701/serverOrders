@@ -1,0 +1,43 @@
+1. Added All API endpoints are following
+
+- curl --location --request GET 'http://localhost:4000/api/v1/orders/getById' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": ["223"]
+}'
+
+curl --location --request GET 'http://localhost:4000/api/v1/orders'
+
+curl --location --request PUT 'http://localhost:4000/api/v1/orders/updateById' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": "224",
+    "totalfee": 51
+}'
+
+curl --location --request POST 'http://localhost:4000/api/v1/orders/insert' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": "227",
+    "datetime": "2022-11-01T11:11:11.111Z",
+    "totalfee": 100,
+    "services": [
+        {
+            "id": "125"
+        }
+    ]
+}'
+
+curl --location --request DELETE 'http://localhost:4000/api/v1/orders/deleteById' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": "224"
+}'
+
+-------------------------------------------------------------------------------------
+
+- Implemented several endpoints that accept POST, GET, PUT and DELETE requests. Also 1 endpoint that accepts GET all orders.
+- Used Node.js and using express framework for server creation.
+- MongoDB is a NoSQL database for nodejs. We will use MongoDB driver for nodejs to manage MongoDB database. MongoDB uses binary JSON to store data. We will also use the mongoose tool to connect MongoDB with Node js and manage the database (i.e. create, read, update, and delete documents).
+
+--------------------------------------------------------------------------------------
